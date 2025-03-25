@@ -2,7 +2,9 @@
 
 provider "azurerm" {
   features {}
-  subscription_id =  "5dfb4d57-e8e3-4bb5-8cec-d6857c3f385b" 
+  
+  
+
 }
 
 # Create Resource Group
@@ -48,10 +50,7 @@ resource "azurerm_function_app" "example" {
     "WEBSITE_RUN_FROM_PACKAGE" = "1"
   }
 }
-env:
-ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+
+
 
 
