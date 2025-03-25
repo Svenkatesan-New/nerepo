@@ -1,37 +1,37 @@
-# name: CD Workflow
+name: CD Workflow
 
-# on:
-#   push:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - main
 
-# jobs:
-#   deploy_function:
-#     runs-on: ubuntu-latest
+jobs:
+  deploy_function:
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-#       - name: Set up Terraform
-#         uses: hashicorp/setup-terraform@v1
-#         with:
-#           terraform_version: 1.0.0
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.0.0
 
-#       - name: Install Azure CLI
-#         run: |
-#           curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+      - name: Install Azure CLI
+        run: |
+          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
-#       - name: Download function zip from Azure Blob Storage
-#         run: |
-#           az storage blob download --container-name "function-code" --name "function_app.zip" --file "function_app.zip" --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}"
+      - name: Download function zip from Azure Blob Storage
+        run: |
+          az storage blob download --container-name "function-code" --name "function_app.zip" --file "function_app.zip" --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}"
 
-#       - name: Initialize Terraform
-#         run: terraform init
+      - name: Initialize Terraform
+        run: terraform init
 
-#       - name: Apply Terraform to deploy the Function App
-#         run: terraform apply -auto-approve
-#         env:
-#           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-#           AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-#           AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      - name: Apply Terraform to deploy the Function App
+        run: terraform apply -auto-approve
+        env:
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
