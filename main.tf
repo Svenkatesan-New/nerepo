@@ -9,13 +9,13 @@ provider "azurerm" {
 
 # Create Resource Group
 resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
+  name     = "example-resources1"
   location = "East US"
 }
 
 # Create Storage Account for Function App
 resource "azurerm_storage_account" "example" {
-  name                     = "examplestorageacct"
+  name                     = "examplestorageaccrunning"
   resource_group_name       = azurerm_resource_group.example.name
   location                 = azurerm_resource_group.example.location
   account_tier              = "Standard"
