@@ -1,0 +1,25 @@
+name: Run Custom Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-action:
+    runs-on: self-hosted  # This will make the job run on a self-hosted runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+
+      - name: Run hello-world action
+        uses: ./.github/actions/hello-world-action
+        with:
+          message: 'GitHub Actions'
+
