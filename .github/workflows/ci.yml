@@ -55,10 +55,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Azure CLI
-        uses: azure/setup-azurecli@v2
-        with:
-          azcliversion: '2.27.0'  # You can use the version you need
+      # - name: Set up Azure CLI
+      #   uses: azure/setup-azurecli@v2
+      #   with:
+      #     azcliversion: '2.27.0'  # You can use the version you need
 
       - name: Log in to Azure CLI
         uses: azure/login@v2
