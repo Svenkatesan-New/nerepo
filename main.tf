@@ -2,6 +2,7 @@
 
 provider "azurerm" {
   features {}
+  subscription_id =  "5dfb4d57-e8e3-4bb5-8cec-d6857c3f385b"
 }
 
 # Create Resource Group
