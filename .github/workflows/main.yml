@@ -17,6 +17,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '12'
+      - name: install core
+        run: npm i @actions/core
 
       - name: Run hello-world action
         uses: ./.github/actions/helloworldaction
