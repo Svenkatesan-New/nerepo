@@ -26,10 +26,10 @@ jobs:
         run: |
           zip -r function_app.zip function_app.py
 
-      - name: Upload function zip to Azure Blob Storage
-        uses: azure/azure-storage-blob-upload@v1
-        with:
-          connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
-          container-name: "function-code"
-          file-path: "function_app.zip"
-          blob-name: "function_app.zip"
+      # - name: Upload function zip to Azure Blob Storage
+      #   uses: azure/azure-storage-blob-upload@v1
+      #   with:
+      #     connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+      #     container-name: "function-code"
+      #     file-path: "function_app.zip"
+      #     blob-name: "function_app.zip"
