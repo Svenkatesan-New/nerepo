@@ -19,7 +19,7 @@ jobs:
           node-version: '12'
 
       - name: Run hello-world action
-        uses: ./.github/actions/hello-world-action
+        uses: ./.github/actions/helloworldaction
         with:
           message: 'GitHub Actions'
 
