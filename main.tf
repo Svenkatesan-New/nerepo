@@ -48,6 +48,4 @@ resource "azurerm_function_app" "example" {
   }
 }
 
-output "function_app_url" {
-  value = azurerm_function_app.example.default_site_hostname
-}
+
