@@ -34,9 +34,9 @@ jobs:
           file-path: "function_app.zip"
           blob-name: "function_app.zip"
 
-      - uses: LanceMcCarthy/Action-AzureBlobUpload@v2
-        name: Uploading to Azure storage...
-        with:
-        connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
-        container-name: "function-code"
-        source_folder: "function_app.zip"
+      # - uses: LanceMcCarthy/Action-AzureBlobUpload@v2
+      #   name: Uploading to Azure storage...
+      #   with:
+      #   connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+      #   container-name: "function-code"
+      #   source_folder: "function_app.zip"
